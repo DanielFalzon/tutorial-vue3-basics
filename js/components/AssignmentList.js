@@ -6,14 +6,17 @@ export default {
     template: `
         <section v-show="assignments.length">
             <h2 className="font-bold mb-2"> 
-                {{ title }}
+                {{ title }} 
                 <span>({{ assignments.length}})</span>
             </h2>
+            
+            <!--v-model is being used here to stay updated with the changes happening on the child component -->
+            
             <assignment-tags 
+                v-model:currentTag="currentTag"
                 :initial-tags="assignments.map(a => a.tag)" 
-                :current-tag="currentTag"
-                @change="currentTag = $event"
             ></assignment-tags>
+            
             <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
                 <assignment
                     v-for="assignment in filteredAssignments"
