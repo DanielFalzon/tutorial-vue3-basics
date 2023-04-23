@@ -4,22 +4,17 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="h-full grid place-items-center">
 
 <div id="app">
-    <app-button>Submit</app-button>
+
 </div>
 
 <script type="module">
-    import AppButton from "./js/components/AppButton.js";
-
-    let App = {
-        components: {
-            'app-button': AppButton,
-        }
-    };
+    import App from "./js/components/App.js";
 
     Vue.createApp(App).mount('#app')
 </script>
